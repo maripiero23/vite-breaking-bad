@@ -39,14 +39,14 @@
 
             })
             // Caso in cui c'è un error nella chiamata ed il codice è diverso da 200
-            .catch((error) => {
+            //.catch((error) => {
             // error contiene un istanza di AxiosError dalla quale posso estrarre varie 
             // informazioni sull'errore avvenuto
-            console.log(error);
+            //console.log(error);
 
-            this.ajaxError ="A causa di un errore, l'operazione non è andata a buon fine"
+            //this.ajaxError ="A causa di un errore, l'operazione non è andata a buon fine"
 
-            });
+            //});
 
         }
     }
