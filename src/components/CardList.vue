@@ -1,9 +1,14 @@
 <template>
-    <ul>
-        <li v-for="(card, index) in cardList" key="index">
-            {{card.name}}
-        </li>
-    </ul>
+    <div class="row row-cols-1 row-cols-md-5 g-4">
+
+        <div class="col" v-for="(card, index) in cardList" key="index">
+            <CardList :personaggio="card"></CardList>
+
+        </div>
+
+     </div>
+        
+    
 
     <div class="alert alert-dangert" v-if="ajaxError">{{ajaxError}}</div>
 
@@ -11,7 +16,9 @@
     
     <script>
     import axios from "axios";
+    import SingleCard from "./SingleCard.vue"
     export default{
+        components: [SingleCard],
         data(){
             return{
                 cardList: [],
