@@ -1,7 +1,7 @@
 <template>
     <div class="row row-cols-1 row-cols-md-5 g-4">
 
-        <div class="col" v-for="(card, index) in cardList" key="index">
+        <div class="col" v-for="(card, index) in store.cardList" key="index">
             <SingleCard :personaggio="card"></SingleCard>
 
         </div>
@@ -17,12 +17,13 @@
     <script>
     import axios from "axios";
     import SingleCard from "./SingleCard.vue"
+    import {store} from "../store"
     export default{
         components: {SingleCard},
         data(){
             return{
-                cardList: [],
                 ajaxError: "",
+                store
             }
         },
 
@@ -35,7 +36,9 @@
                 this.ajaxError= "",
 
                 // console.log(resp.data.results);
-                this.cardList = resp.data.results
+
+                this.store.cardList = resp.data.results,
+                this.store.infoPage = resp.data.info
 
             })
             // Caso in cui c'è un error nella chiamata ed il codice è diverso da 200

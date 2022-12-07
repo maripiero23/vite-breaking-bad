@@ -1,15 +1,17 @@
 <script>
 import TheHeader from './components/TheHeader.vue'
-import TheMain from './components/TheMain.vue'
+import FiltersBanner from './components/FiltersBanner.vue'
 import CardList from './components/CardList.vue'
 import SingleCard from './components/SingleCard.vue'
+import {store} from '../src/store'
 
 
 
 export default{
-  components: {TheHeader, TheMain, CardList, SingleCard},
+  components: {TheHeader, FiltersBanner, CardList, SingleCard},
   data(){
     return{
+      store
 
     }
   }
@@ -18,9 +20,16 @@ export default{
 </script>
 
 <template>
-  <CardList></CardList>
-  <TheHeader></TheHeader>
-  <TheMain></TheMain>
+  <div>
+    <TheHeader></TheHeader>
+    <div class="container pt-5">
+      <FiltersBanner></FiltersBanner>
+
+      <CardList></CardList>
+  
+    </div>
+
+  </div>
 </template>
 
 <style lang="scss">
