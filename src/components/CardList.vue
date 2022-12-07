@@ -2,7 +2,7 @@
     <div class="row row-cols-1 row-cols-md-5 g-4">
 
         <div class="col" v-for="(card, index) in cardList" key="index">
-            <CardList :personaggio="card"></CardList>
+            <SingleCard :personaggio="card"></SingleCard>
 
         </div>
 
@@ -18,7 +18,7 @@
     import axios from "axios";
     import SingleCard from "./SingleCard.vue"
     export default{
-        components: [SingleCard],
+        components: {SingleCard},
         data(){
             return{
                 cardList: [],

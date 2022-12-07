@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-      <img :src="personaggio.img" class="card-img-top" :alt="('immagine di' + personaggio.name)">
+      <img :src="personaggio.image" class="card-img-top" :alt="('immagine di' + personaggio.name)">
       <div class="card-body">
         <h5 class="card-title">{{personaggio.name}}</h5>
         <!-- <p class="card-text"></p> -->
