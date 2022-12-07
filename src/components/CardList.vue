@@ -17,30 +17,34 @@
     <script>
     import axios from "axios";
     import SingleCard from "./SingleCard.vue"
-    import {store} from "../store"
+    import {store, fetchCards} from "../store"
     export default{
         components: {SingleCard},
         data(){
             return{
-                ajaxError: "",
+                // ajaxError: "",
                 store
             }
         },
 
         created(){
+
+            fetchCards()
+
+
             //Faccio la chiamata
-            axios.get("https://rickandmortyapi.com/api/character")
-            //Ascolto la risposta, ottengo quindi un codice 200
-            .then(resp =>{
+            // axios.get("https://rickandmortyapi.com/api/character")
+            // //Ascolto la risposta, ottengo quindi un codice 200
+            // .then(resp =>{
 
-                this.ajaxError= "",
+            //     this.ajaxError= "",
 
-                // console.log(resp.data.results);
+            //     // console.log(resp.data.results);
 
-                this.store.cardList = resp.data.results,
-                this.store.infoPage = resp.data.info
+            //     this.store.cardList = resp.data.results,
+            //     this.store.infoPage = resp.data.info
 
-            })
+            // })
             // Caso in cui c'è un error nella chiamata ed il codice è diverso da 200
             //.catch((error) => {
             // error contiene un istanza di AxiosError dalla quale posso estrarre varie 

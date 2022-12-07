@@ -13,19 +13,18 @@ export const store = reactive({
     loading: "false"
 })
 
-export function fetchCards({
+export function fetchCards(){
     axios.get("https://rickandmortyapi.com/api/character")
 
     //Ascolto la risposta, ottengo quindi un codice 200
     .then(resp =>{
 
-        this.ajaxError= "",
+        // this.ajaxError= "",
 
         // console.log(resp.data.results);
 
-        this.store.cardList = resp.data.results,
-        this.store.infoPage = resp.data.info
+        store.cardList = resp.data.results,
+        store.infoPage = resp.data.info
 
     })
-
-})
+}

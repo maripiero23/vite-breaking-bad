@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import {store} from "../store";
+import {store, fetchCards} from "../store";
 export default{
     data(){
         return{
