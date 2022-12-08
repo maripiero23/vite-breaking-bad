@@ -1,12 +1,12 @@
 <template>
     <div class="alert alert-info">
-        {{store.infoPage}}
+       
 
         Sono stati trovato {{store.infoPage.count}} elementi. Stai visualizzando la pagina Y di {{store.infoPage.pages}}.
 
     </div>
 
-    <button>Cerca</button>
+    <button @click="onSearchClick">Cerca</button>
 
 </template>
 
@@ -16,6 +16,14 @@ export default{
     data(){
         return{
             store
+        }
+    },
+    methods: {
+        onSearchClick(){
+            //Invoco la funzione che viene usata amche in CardList
+        fetchCards()
+
+
         }
     }
 

@@ -26,5 +26,9 @@ export default{
     
 <style lang="scss" scoped>
 // @use '../styles/partials/variables' as *;
+
+// .card{
+//   background-color: rgba(46,58,70,255);
+// }
     
 </style>

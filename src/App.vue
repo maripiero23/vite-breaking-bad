@@ -22,11 +22,14 @@ export default{
 <template>
   <div>
     <TheHeader></TheHeader>
-    <div class="container pt-5">
-      <FiltersBanner></FiltersBanner>
-
-      <CardList></CardList>
+    <div class="all-container">
+      <div class="container pt-5">
+        <FiltersBanner></FiltersBanner>
   
+        <CardList></CardList>
+    
+      </div>
+
     </div>
 
   </div>
@@ -34,6 +37,11 @@ export default{
 
 <style lang="scss">
 // @use './styles/general.scss' as *;
+
+// .all-container{
+//   width: 1120px;
+//   margin: auto;
+// }
 
 
 </style>

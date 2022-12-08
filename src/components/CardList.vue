@@ -28,7 +28,8 @@
         },
 
         created(){
-
+            //Invoco la funzione dallo store perchè la stessa verrà usata
+            //da un altro componente
             fetchCards()
 
 
