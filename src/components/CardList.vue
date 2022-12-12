@@ -1,4 +1,7 @@
 <template>
+
+    <Pagination :currentPage="store.currentPage" class="pt-4" @pageChange="onPageChange"></Pagination>
+
     <div class="row row-cols-1 row-cols-md-5 g-4">
 
         <div class="col" v-for="(card, index) in store.cardList" key="index">
@@ -10,7 +13,10 @@
         
     
 
-    <div class="alert alert-dangert" v-if="ajaxError">{{ajaxError}}</div>
+    <!-- <div class="alert alert-dangert" v-if="ajaxError">{{ajaxError}}</div> -->
+
+    <Pagination class="pt-4"></Pagination>
+
 
 </template>
     
@@ -18,14 +24,23 @@
     import axios from "axios";
     import SingleCard from "./SingleCard.vue"
     import {store, fetchCards} from "../store"
+    import Pagination from "./Pagination.vue"
+
     export default{
-        components: {SingleCard},
+        components: {SingleCard, Pagination},
         data(){
             return{
                 // ajaxError: "",
                 store
             }
         },
+        methods: {
+            onPageChange(newPage){
+                this.store.currentPage = newPage
+
+                fetchCards(newPage)
+            }    
+            },
 
         created(){
             //Invoco la funzione dallo store perchè la stessa verrà usata

@@ -3,16 +3,28 @@ import TheHeader from './components/TheHeader.vue'
 import FiltersBanner from './components/FiltersBanner.vue'
 import CardList from './components/CardList.vue'
 import SingleCard from './components/SingleCard.vue'
-import {store} from '../src/store'
+import SearchSection from './components/SearchSection.vue'
+
+import {fetchCards, store} from '../src/store'
 
 
 
 export default{
-  components: {TheHeader, FiltersBanner, CardList, SingleCard},
+  components: {TheHeader, FiltersBanner, CardList, SingleCard, SearchSection},
   data(){
     return{
       store
 
+    }
+  },
+
+  methods: {
+    onSearch(filtersEmitted){
+      this.store.activeFilters = filtersEmitted,
+
+      fetchCards()
+
+      console.log(filtersEmitted);
     }
   }
 
@@ -24,7 +36,8 @@ export default{
     <TheHeader></TheHeader>
     <div class="all-container">
       <div class="container pt-5">
-        <FiltersBanner></FiltersBanner>
+        <SearchSection></SearchSection>
+        <FiltersBanner @search="onSearch"></FiltersBanner>
   
         <CardList></CardList>
     

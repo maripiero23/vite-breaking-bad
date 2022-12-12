@@ -10,11 +10,19 @@ export const store = reactive({
      * @property {string} prev
      */
     infoPage: [],
-    loading: "false"
+    currentPage: 1,
+    loading: "false",
+    activeFilters: null
 })
 
-export function fetchCards(){
-    axios.get("https://rickandmortyapi.com/api/character")
+export function fetchCards(newPage){
+
+    axios.get("https://rickandmortyapi.com/api/character", {
+        params: {
+            page: store.currentPage,
+            search: store.activeFilters,  //non mi filtra comunque i nomi!!
+        }
+    })
 
     //Ascolto la risposta, ottengo quindi un codice 200
     .then(resp =>{
