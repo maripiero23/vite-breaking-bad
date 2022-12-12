@@ -36,7 +36,6 @@ export default{
     <TheHeader></TheHeader>
     <div class="all-container">
       <div class="container pt-5">
-        <SearchSection></SearchSection>
         <FiltersBanner @search="onSearch"></FiltersBanner>
   
         <CardList></CardList>

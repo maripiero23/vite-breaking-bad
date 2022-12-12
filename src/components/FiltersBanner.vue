@@ -16,17 +16,7 @@
 
     </div>
 
-    <div class="alert alert-warning">
-        <h3>Statisiche</h3>
-
-        <ul>
-            <li><strong>Num.specie: </strong>{{speciesList.length}}</li>
-            <ul>
-                <li v-for="specie in speciesList">{{specie}}</li>
-            </ul>
-        </ul>
-
-    </div>
+    
 
     <button @click="onSearchClick">Cerca</button>
 
